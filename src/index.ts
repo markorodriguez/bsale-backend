@@ -9,8 +9,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.listen("5000", () => {
-  console.log("Listening on port 5001");
+app.listen(process.env.PORT || 5000, () => {
+  console.log("Server running");
 });
 
 app.use("/categories", categoryRouter)
