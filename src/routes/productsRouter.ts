@@ -3,7 +3,7 @@ import { productController } from "../controllers/products.controller";
 
 const productsRouter = Express.Router();
 
-productsRouter.post("/", async (_req: Request, res: Response) => {
+productsRouter.get("/", async (_req: Request, res: Response) => {
     await productController.getProductsDatabase();
     const paginatedResults = productController.paginatedResults(1);
     res.send(paginatedResults);
